@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/ublogo.png';
+import FaUserCircle from 'react-icons/fa';
 
 const Navbar = () => {
   const linkClass = ({ isActive }) =>
@@ -8,14 +9,14 @@ const Navbar = () => {
       : 'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2';
 
   return (
-    <nav className='bg-indigo-700 border-b border-indigo-500'>
+    <nav className='bg-red-900 border-b border-red-500'>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
         <div className='flex h-20 items-center justify-between'>
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
             <NavLink className='flex flex-shrink-0 items-center mr-4' to='/'>
               <img className='h-10 w-auto' src={logo} alt='React Jobs' />
-              <span className='hidden md:block text-white text-2xl font-bold ml-2'>
-                React Jobs
+              <span className='hidden md:block text-white text-2xl font-light ml-2'>
+                University of Batangas
               </span>
             </NavLink>
             <div className='md:ml-auto'>
@@ -28,6 +29,10 @@ const Navbar = () => {
                 </NavLink>
                 <NavLink to='/add-job' className={linkClass}>
                   Add Job
+                </NavLink>
+                <NavLink to='/profile' className={linkClass}>
+                  <FaUserCircle className='inline-block mr-2' size={24} />
+                  <span className='hidden md:inline'>Profile</span>
                 </NavLink>
               </div>
             </div>
